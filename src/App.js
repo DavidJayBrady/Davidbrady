@@ -5,6 +5,8 @@ import './Components/HighlightSection'
 import cog from "./Assets/backgroundcog.jpg";
 import HighlightSection from "./Components/HighlightSection";
 
+
+
 class App extends Component {
 
 	constructor()
@@ -38,4 +40,4 @@ class App extends Component {
   }
 }
 
- export default App;
+export default App;
