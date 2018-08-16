@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import './Components/HighlightSection'
 
-import cog from "./Assets/backgroundcog.jpg";
-import HighlightSection from "./Components/HighlightSection";
+import {BrowserRouter} from "react-router-dom";
+import {Route} from 'react-router';
+
+import MainPage from "./components/MainPage";
+import Yoshi from "./components/Yoshi";
 
 
 
@@ -17,25 +19,19 @@ class App extends Component {
 
 	entered(section)
 	{
-		console.log("stuff")
+		console.log("stuff");
 		console.log(section);
 		// change section visibility
 	}
 
-  render() {
-    return (
-      <div className="App">
 
-		  <div>
-		  	<div className="container">
-			  <img src={cog} alt="cog" style={{width:"100%", height:"100%"}} className="container"/>
-				<HighlightSection on_enter={this.entered} passiveColor="blue" activeColor="lightblue" location={"top-left"}/>
-				<HighlightSection on_enter={this.entered} passiveColor="purple" activeColor="mediumpurple" location={"top-right"}/>
-				<HighlightSection on_enter={this.entered} passiveColor="green" activeColor="lightgreen" location={"bottom-left"}/>
-				<HighlightSection on_enter={this.entered} passiveColor="red" activeColor="orange" location={"bottom-right"}/>
+  render() {
+    return ( <BrowserRouter>
+			<div>
+					<Route exact path="/" component={MainPage} />
+					<Route exact path="/yoshi" component={Yoshi} />
 			</div>
-		  </div>
-      </div>
+				</BrowserRouter>
     );
   }
 }
