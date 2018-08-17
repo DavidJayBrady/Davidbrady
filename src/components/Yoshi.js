@@ -5,7 +5,7 @@ class Yoshi extends Component {
 	render() {
 		return (
 				<div>
-					hi
+					yoshi
 				</div>
 		);
 	}

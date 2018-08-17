@@ -10,7 +10,7 @@ class MainPage extends Component {
 		return (
 			<div className="App">
 				<div>
-					<div className="container">
+					<div className="container" style={{width:"100%", height:"100%"}}>
 						<img src={cog} alt="cog" style={{width:"100%", height:"100%"}}  className="container"/>
 						<HighLightSection on_enter={this.entered} passiveColor="blue"   activeColor="lightblue"
 										  location={"top-left"}     linkTo="/yoshi" />

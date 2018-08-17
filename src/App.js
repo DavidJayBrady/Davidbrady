@@ -6,7 +6,7 @@ import {Route} from 'react-router';
 
 import MainPage from "./components/MainPage";
 import Yoshi from "./components/Yoshi";
-
+import Bio from "./components/BioPage/Bio"
 
 
 class App extends Component {
@@ -15,6 +15,8 @@ class App extends Component {
 	{
 		super();
 		this.entered = this.entered.bind(this);
+		//document.body.style.overflow = "hidden";
+
 	}
 
 	entered(section)
@@ -26,10 +28,12 @@ class App extends Component {
 
 
   render() {
-    return ( <BrowserRouter>
+	  return ( <BrowserRouter>
 			<div>
 					<Route exact path="/" component={MainPage} />
 					<Route exact path="/yoshi" component={Yoshi} />
+					<Route path="/bio/" component={Bio} />
+
 			</div>
 				</BrowserRouter>
     );
