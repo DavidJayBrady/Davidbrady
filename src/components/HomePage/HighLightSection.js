@@ -24,7 +24,6 @@ class HighlightSection extends Component {
 
   mouseLeave() {
 	  this.setState( {navigate: false, hover: false});
-	  this.props.controlColor("none");
   }
 
   handleClick() {

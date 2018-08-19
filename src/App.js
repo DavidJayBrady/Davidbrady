@@ -12,7 +12,7 @@ class App extends Component {
   constructor() {
     super();
     this.entered = this.entered.bind(this);
-    //document.body.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
   }
 
   entered(section) {
@@ -24,7 +24,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
+        <div style={{height: '100%'}}>
           <Route exact path="/" component={MainPage} />
           <Route exact path="/yoshi" component={Yoshi} />
           <Route path="/bio/" component={Bio} />
