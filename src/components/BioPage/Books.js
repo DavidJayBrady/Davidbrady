@@ -7,36 +7,52 @@ import RadianceImage from "../../Assets/Books/radiance.jpeg";
 class Books extends Component {
   constructor() {
     super();
-    this.book_style = {
-      padding: "5vw",
-      display: "inline-block",
-      marginLeft: "auto",
-      marginRight: "auto",
-      width: "25vw",
-      height: "60vh",
-    };
+    this.state = { quote: "" };
   }
 
   render() {
     return (
-      <div align="center" style={{ background: "blue", height: "100%" }}>
-        <div style={{ display: 'flex', flexDirection: 'column', height: '100%'}}>
+      <div align="center" style={{ height: "100%" }}>
+        <div
+          style={{ display: "flex", flexDirection: "column", height: "100%" }}
+        >
           <div className="books">
-            <div className="mistborn">
+            <div
+              className="mistborn"
+              onMouseEnter={() =>
+                this.setState({ quote: "Ash fell from the sky" })
+              }
+            >
               <img src={MistbornImage} alt="Mistborn" />
             </div>
-            <div className="dune">
+            <div
+              className="dune"
+              onMouseEnter={() =>
+                this.setState({
+                  quote: "Without the sardonic, greatness destroys a man",
+                })
+              }
+            >
               <img src={DuneImage} alt="Dune" />
             </div>
-            <div className="radiance">
-              <img
-                  src={RadianceImage}
-                  alt="Words of Radiance"
-              />
+            <div
+              className="radiance"
+              onMouseEnter={() =>
+                this.setState({ quote: "Journey before destination" })
+              }
+            >
+              <img src={RadianceImage} alt="Words of Radiance" />
             </div>
           </div>
-          <div style={{height:"150px", backgroundColor: "orange", display: "flex", alignItems: "center", justifyContent: 'center' }}>
-            <h3>Journey Before Destination</h3>
+          <div
+            style={{
+              height: "150px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <h3>{this.state.quote}</h3>
           </div>
         </div>
       </div>
@@ -45,26 +61,3 @@ class Books extends Component {
 }
 
 export default Books;
-
-
-//
-// <table style={{ width: "100%", height: "100%" }}>
-//   <tr>
-//     <td style={{ background: "red" }}>
-//       <img src={MistbornImage} alt="Mistborn" style={this.book_style} />
-//     </td>
-//     <td style={{ background: "green" }}>
-//       <img src={DuneImage} alt="Dune" style={this.book_style} />
-//     </td>
-//     <td style={{ background: "yellow" }}>
-//       <img
-//           src={RadianceImage}
-//           alt="Words of Radiance"
-//           style={this.book_style}
-//       />
-//     </td>
-//   </tr>
-//   <tr style={{ height: "100%", background: "orange" }}>
-//     <td>text</td>
-//   </tr>
-// </table>
