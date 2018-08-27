@@ -1,58 +1,56 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router";
+import { Link } from "react-router-dom";
 
 class HighlightSection extends Component {
   constructor(props) {
     super(props);
 
-    this.style = { backgroundColor: this.props.colorEtre, opacity: "0" };
-    this.state = { navigate: false, hover: false };
+    this.bigOpacity = ".25";
+    this.smallOpacity = ".10";
 
-    this.bigOpacity = ".35";
-    this.smallOpacity = ".15";
+    this.state = { opacity: this.smallOpacity };
 
     this.mouseEnter = this.mouseEnter.bind(this);
     this.mouseLeave = this.mouseLeave.bind(this);
-    this.handleClick = this.handleClick.bind(this);
   }
 
   mouseEnter() {
     this.props.controlColor(this.props.color);
-    this.setState( {navigate: false, hover: true});
-    this.style = { backgroundColor: this.props.colorEtre, opacity: this.bigOpacity };
+    this.setState({ opacity: this.bigOpacity });
   }
 
   mouseLeave() {
-	  this.setState( {navigate: false, hover: false});
-  }
-
-  handleClick() {
-    this.setState({ navigate: true });
+    this.setState({ opacity: this.smallOpacity });
   }
 
   render() {
-
-  	if (this.state.hover)
-	{
-		this.style = { backgroundColor: this.props.colorEtre, opacity: this.bigOpacity };
-
-	}
-	else {
-		this.style = {backgroundColor: this.props.colorEtre, opacity: this.smallOpacity};
-	}
-
-    if (this.state.navigate) {
-      return <Redirect to={this.props.linkTo} />;
-    }
-
     return (
-      <div
-        className={this.props.location}
-        style={this.style}
-        onMouseEnter={this.mouseEnter}
-        onMouseLeave={this.mouseLeave}
-        onClick={this.handleClick}
-      />
+      <Link
+        to={this.props.linkTo}
+        style={{ flex: 1, width: "100%", height: "100%" }}
+      >
+        <div style={{ width: "100%", height: "100%" }}>
+          <div
+            style={{
+              backgroundColor: this.props.colorEtre,
+              opacity: this.state.opacity,
+              width: "100%",
+              height: "100%",
+            }}
+            onMouseEnter={this.mouseEnter}
+            onMouseLeave={this.mouseLeave}
+          >
+            <img
+              src={this.props.energyBall}
+              alt={"Energy ball"}
+              style={{
+                width: "20%",
+                height: "20%",
+              }}
+            />
+          </div>
+        </div>
+      </Link>
     );
   }
 }

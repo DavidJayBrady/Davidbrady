@@ -3,7 +3,9 @@ html, body, #root {
 }
 
 .App {
-  text-align: center;
+    text-align: center;
+    background-image: url(Assets/Castle.jpeg);
+    background-size: cover;
 }
 
 .App-logo {

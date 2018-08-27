@@ -12,7 +12,7 @@ class App extends Component {
   constructor() {
     super();
     this.entered = this.entered.bind(this);
-    document.body.style.overflow = "hidden";
+    //document.body.style.overflow = "hidden";
   }
 
   entered(section) {
