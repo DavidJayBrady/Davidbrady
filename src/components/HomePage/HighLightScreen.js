@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 
 import HighLightSection from "../HomePage/HighLightSection";
-import BlueEnergy from "../../Assets/MainPage/blue_energy.jpg";
+import BlueEnergy from "../../Assets/MainPage/blue_energy.png";
+import GreenEnergy from "../../Assets/MainPage/green_energy.png";
+import RedEnergy from "../../Assets/MainPage/red_energy.png";
+import YellowEnergy from "../../Assets/MainPage/yellow_energy.png";
+
 
 class HighLightScreen extends Component {
   constructor() {
@@ -30,8 +34,8 @@ class HighLightScreen extends Component {
             colorEtre={this.state.color}
             linkTo="/bio"
             controlColor={this.setColor}
-            color="orange"
-            energyBall={BlueEnergy}
+            color="yellow"
+            energyBall={YellowEnergy}
           />
         </div>
         <div style={{display: "flex", flexDirection: "row", flex: 1, widht: "100%"}}>
@@ -40,14 +44,14 @@ class HighLightScreen extends Component {
             linkTo="/"
             controlColor={this.setColor}
             color="green"
-            energyBall={BlueEnergy}
+            energyBall={GreenEnergy}
           />
           <HighLightSection
             colorEtre={this.state.color}
             linkTo="/"
             controlColor={this.setColor}
             color="red"
-            energyBall={BlueEnergy}
+            energyBall={RedEnergy}
           />
         </div>
       </div>

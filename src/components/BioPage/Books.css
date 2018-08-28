@@ -1,0 +1,35 @@
+.books {
+    display: flex;
+    height: 60vh;
+}
+
+.books > .dune > img {
+    width: 25vw;
+    height: 60vh;
+}
+.books > .mistborn > img {
+    width: 25vw;
+    height: 60vh;
+}
+.books > .radiance > img {
+    width: 25vw;
+    height: 60vh;
+}
+
+.books > .mistborn {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2vw;
+}
+.books > .dune {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.books > .radiance {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 2vw;
+}

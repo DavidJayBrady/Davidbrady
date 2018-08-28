@@ -8,10 +8,6 @@ html, body, #root {
     background-size: cover;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
 
 .App-header {
   background-color: #222;
@@ -28,43 +24,7 @@ html, body, #root {
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
 
-
-.top-left {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 50%;
-    height: 50%;
-}
-
-.top-right {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 50%;
-    height: 50%;
-}
-
-.bottom-left {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 50%;
-    height: 50%;
-}
-
-.bottom-right {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    width: 50%;
-    height: 50%;
-}
 
 
 
@@ -76,38 +36,3 @@ html, body, #root {
     transform: translate(-50%, -50%);
 }
 
-.books {
-  display: flex;
-  height: 60vh;
-}
-
-.books > .dune > img {
-    width: 25vw;
-    height: 60vh;
-}
-.books > .mistborn > img {
-    width: 25vw;
-    height: 60vh;
-}
-.books > .radiance > img {
-    width: 25vw;
-    height: 60vh;
-}
-
-.books > .mistborn {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 2vw;
-}
-.books > .dune {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-.books > .radiance {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-    padding-left: 2vw;
-}

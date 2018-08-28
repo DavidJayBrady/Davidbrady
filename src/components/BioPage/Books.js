@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./Books.css";
 
 import MistbornImage from "../../Assets/Books/mistborn.jpg";
 import DuneImage from "../../Assets/Books/dune.jpg";

@@ -1,58 +1,82 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+import "./HighLight.css";
+
 class HighlightSection extends Component {
-  constructor(props) {
-    super(props);
+	constructor(props) {
+		super(props);
 
-    this.bigOpacity = ".25";
-    this.smallOpacity = ".10";
+		this.weakBackgroundOpacity = ".15";
+		this.strongBackgroundOpacity = ".25";
 
-    this.state = { opacity: this.smallOpacity };
+		this.weakEnergyOpacity = ".50";
+		this.strongEnergyOpacity = "1";
 
-    this.mouseEnter = this.mouseEnter.bind(this);
-    this.mouseLeave = this.mouseLeave.bind(this);
-  }
+		this.state = {
+			backgroundOpacity: this.weakBackgroundOpacity,
+			energyOpacity: this.weakEnergyOpacity,
+			hover: false
+		};
 
-  mouseEnter() {
-    this.props.controlColor(this.props.color);
-    this.setState({ opacity: this.bigOpacity });
-  }
+		this.mouseEnter = this.mouseEnter.bind(this);
+		this.mouseLeave = this.mouseLeave.bind(this);
+	}
 
-  mouseLeave() {
-    this.setState({ opacity: this.smallOpacity });
-  }
+	mouseEnter() {
+		this.props.controlColor(this.props.color);
+		this.setState({
+			backgroundOpacity: this.strongBackgroundOpacity,
+			energyOpacity: this.strongEnergyOpacity,
+			hover: true
+		});
+	}
 
-  render() {
-    return (
-      <Link
-        to={this.props.linkTo}
-        style={{ flex: 1, width: "100%", height: "100%" }}
-      >
-        <div style={{ width: "100%", height: "100%" }}>
-          <div
-            style={{
-              backgroundColor: this.props.colorEtre,
-              opacity: this.state.opacity,
-              width: "100%",
-              height: "100%",
-            }}
-            onMouseEnter={this.mouseEnter}
-            onMouseLeave={this.mouseLeave}
-          >
-            <img
-              src={this.props.energyBall}
-              alt={"Energy ball"}
-              style={{
-                width: "20%",
-                height: "20%",
-              }}
-            />
-          </div>
-        </div>
-      </Link>
-    );
-  }
+	mouseLeave() {
+		this.setState({
+			backgroundOpacity: this.weakBackgroundOpacity,
+			energyOpacity: this.weakEnergyOpacity,
+			hover: false
+		});
+	}
+
+	render() {
+		return (
+			<Link
+				to={this.props.linkTo}
+				style={{ flex: 1, width: "100%", height: "100%" }}
+			>
+				<div
+					style={{ width: "100%", height: "100%", position: "relative" }}
+					onMouseEnter={this.mouseEnter}
+					onMouseLeave={this.mouseLeave}
+				>
+					<div
+						style={{
+							backgroundColor: this.props.colorEtre,
+							opacity: this.state.backgroundOpacity,
+							width: "100%",
+							height: "100%",
+						}}
+					/>
+					<img
+						src={this.props.energyBall}
+						alt={"Energy ball"}
+						style={{
+							width: "20%",
+							height: "20%",
+							position: "absolute",
+							top: "30%",
+							left: "40%",
+							opacity: this.state.energyOpacity,
+							animation: "EnergySpin infinite 20s linear",
+							animationPlayState: (this.state.hover)? "running": "paused"
+						}}
+					/>
+				</div>
+			</Link>
+		);
+	}
 }
 
 export default HighlightSection;
