@@ -2,3 +2,10 @@
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
+
+.HighLighter > h1 {
+    text-underline: none;
+    top: 60%;
+    align-items: center;
+    display: flex;
+}

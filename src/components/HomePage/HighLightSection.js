@@ -16,7 +16,7 @@ class HighlightSection extends Component {
 		this.state = {
 			backgroundOpacity: this.weakBackgroundOpacity,
 			energyOpacity: this.weakEnergyOpacity,
-			hover: false
+			hover: false,
 		};
 
 		this.mouseEnter = this.mouseEnter.bind(this);
@@ -28,7 +28,7 @@ class HighlightSection extends Component {
 		this.setState({
 			backgroundOpacity: this.strongBackgroundOpacity,
 			energyOpacity: this.strongEnergyOpacity,
-			hover: true
+			hover: true,
 		});
 	}
 
@@ -36,7 +36,7 @@ class HighlightSection extends Component {
 		this.setState({
 			backgroundOpacity: this.weakBackgroundOpacity,
 			energyOpacity: this.weakEnergyOpacity,
-			hover: false
+			hover: false,
 		});
 	}
 
@@ -47,16 +47,26 @@ class HighlightSection extends Component {
 				style={{ flex: 1, width: "100%", height: "100%" }}
 			>
 				<div
-					style={{ width: "100%", height: "100%", position: "relative" }}
+					style={{
+						width: "100%",
+						height: "100%",
+						position: "relative",
+						display: "flex",
+						flexDirection: "column",
+						alignItems: "center",
+						justifyContent: "center",
+					}}
 					onMouseEnter={this.mouseEnter}
 					onMouseLeave={this.mouseLeave}
+					className="HighLighter"
 				>
 					<div
 						style={{
-							backgroundColor: this.props.colorEtre,
-							opacity: this.state.backgroundOpacity,
+							position: "absolute",
 							width: "100%",
 							height: "100%",
+							backgroundColor: this.props.colorEtre,
+							opacity: this.state.backgroundOpacity,
 						}}
 					/>
 					<img
@@ -65,14 +75,16 @@ class HighlightSection extends Component {
 						style={{
 							width: "20%",
 							height: "20%",
-							position: "absolute",
-							top: "30%",
-							left: "40%",
+							// position: "absolute",
+							// top: "30%",
+							// left: "40%",
 							opacity: this.state.energyOpacity,
 							animation: "EnergySpin infinite 20s linear",
-							animationPlayState: (this.state.hover)? "running": "paused"
+							animationPlayState: this.state.hover ? "running" : "paused",
+							display: "flex",
 						}}
 					/>
+					<h1 style={{ color: this.props.color }}>{this.props.text}</h1>
 				</div>
 			</Link>
 		);

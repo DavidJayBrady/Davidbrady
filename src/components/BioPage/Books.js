@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./Books.css";
 
-import MistbornImage from "../../Assets/Books/mistborn.jpg";
-import DuneImage from "../../Assets/Books/dune.jpg";
-import RadianceImage from "../../Assets/Books/radiance.jpeg";
+import MistbornImage from "../../Assets/Bio/Books/mistborn.jpg";
+import DuneImage from "../../Assets/Bio/Books/dune.jpg";
+import RadianceImage from "../../Assets/Bio/Books/radiance.jpeg";
 
 class Books extends Component {
   constructor() {
@@ -13,9 +13,9 @@ class Books extends Component {
 
   render() {
     return (
-      <div align="center" style={{ height: "100%" }}>
+      <div id="bookPage" align="center" style={{ height: "200%", display: "flex", width: "100vw", backgroundColor: "green"}}>
         <div
-          style={{ display: "flex", flexDirection: "column", height: "100%" }}
+          style={{ display: "flex", flexDirection: "column", height: "100%", width: "100vw" }}
         >
           <div className="books">
             <div
@@ -51,6 +51,7 @@ class Books extends Component {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+				backgroundColor: "orange"
             }}
           >
             <h3>{this.state.quote}</h3>
