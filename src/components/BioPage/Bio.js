@@ -9,6 +9,8 @@ import Books from "./Books";
 import French from "./French";
 import AboutMe from "./AboutMe";
 
+import $ from "jquery";
+
 import RightArrow from "../../Assets/Bio/right_arrow.jpg";
 
 class Bio extends Component {
@@ -16,32 +18,30 @@ class Bio extends Component {
 		super();
 		this.moveRight = this.moveRight.bind(this);
 		this.setActiveKey = this.setActiveKey.bind(this);
-		this.state = {activeKey: 1};
+		this.state = { activeKey: 1 };
 	}
 
-	setActiveKey(key)
-	{
-		this.setState({activeKey: key});
+	setActiveKey(key) {
+		this.setState({ activeKey: key });
 	}
+
+	componentDidMount() {}
+
 
 	moveRight() {
-		alert("clicked");
-		var element = document.getElementById("bookPage");
-		element.scrollIntoView();
-	}
-
-
-	componentDidMount()
-	{
-
+		$('html,body').animate({scrollLeft: $('#bookPage').offset().top}, 1000);
 	}
 
 	render() {
-
 		return (
 			<div className="bioPage" style={{ height: "100%" }}>
-				<Navbar style={{backgroundColor:"darkred", marginBottom: 0}} >
-					<Nav bsStyle="tabs"  justified activeKey={this.state.activeKey} onSelect={this.setActiveKey}>
+				<Navbar style={{ backgroundColor: "darkred", marginBottom: 0 }}>
+					<Nav
+						bsStyle="tabs"
+						justified
+						activeKey={this.state.activeKey}
+						onSelect={this.setActiveKey}
+					>
 						<NavItem eventKey={1} href="#">
 							<Link to="/bio#aboutme"> About Me </Link>
 						</NavItem>
@@ -57,19 +57,20 @@ class Bio extends Component {
 					</Nav>
 				</Navbar>
 
-				<img
-					src={RightArrow}
-					onClick={this.moveRight}
-					style={{
-						backgroundColor: "yellow",
-						width: "5%",
-						height: "5%",
-						position: "absolute",
-						top: "50%",
-						right: "0px"
-
-					}}
-				/>
+				<a href="/bio#bookPage">
+					<img
+						src={RightArrow}
+						onClick={this.moveRight}
+						style={{
+							backgroundColor: "yellow",
+							width: "5%",
+							height: "5%",
+							position: "absolute",
+							top: "50%",
+							right: "0px",
+						}}
+					/>
+				</a>
 
 				<div
 					id="bio"
@@ -78,6 +79,7 @@ class Bio extends Component {
 						width: "300vw",
 						height: "100%",
 						backgroundColor: "blueViolet",
+						scroll: "smooth"
 					}}
 				>
 					<AboutMe />

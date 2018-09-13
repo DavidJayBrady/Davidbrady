@@ -1,5 +1,6 @@
 .bioPage {
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 .bioTab {
@@ -7,6 +8,4 @@
     width: 100vw;
 }
 
-div:target {
-    background: rgb( 255, 90, 180);
-}
+
