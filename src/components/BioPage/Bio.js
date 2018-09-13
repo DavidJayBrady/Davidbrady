@@ -15,6 +15,13 @@ class Bio extends Component {
 	constructor() {
 		super();
 		this.moveRight = this.moveRight.bind(this);
+		this.setActiveKey = this.setActiveKey.bind(this);
+		this.state = {activeKey: 1};
+	}
+
+	setActiveKey(key)
+	{
+		this.setState({activeKey: key});
 	}
 
 	moveRight() {
@@ -33,16 +40,16 @@ class Bio extends Component {
 
 		return (
 			<div className="bioPage" style={{ height: "100%" }}>
-				<Navbar>
-					<Nav bsStyle="tabs" justified activeKey={1}>
+				<Navbar style={{backgroundColor:"darkred", marginBottom: 0}} >
+					<Nav bsStyle="tabs"  justified activeKey={this.state.activeKey} onSelect={this.setActiveKey}>
 						<NavItem eventKey={1} href="#">
-							<Link to="/bio/"> About Me </Link>
+							<Link to="/bio#aboutme"> About Me </Link>
 						</NavItem>
 						<NavItem eventKey={2} href="#">
-							<Link to="/bio/books"> Books </Link>
+							<Link to="/bio#books"> Books </Link>
 						</NavItem>
 						<NavItem eventKey={3} href="#">
-							<Link to="/bio/french"> French </Link>
+							<Link to="/bio#french"> French </Link>
 						</NavItem>
 						<NavItem eventKey={4} href="#">
 							<Link to="/"> Back </Link>

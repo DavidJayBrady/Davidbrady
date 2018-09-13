@@ -1,20 +1,12 @@
-import React, { Component } from 'react';
-
-
-
+import React, { Component } from "react";
 
 class AboutMe extends Component {
-
-
 	render() {
+		return <div class="bioTab">
+			<a href="/bio#bookPage">asdf </a>
 
-		return (
-			<div style={{display: "flex", width: "100vw"}}>
-				About Me
-			</div>
-		);
+			About Me</div>;
 	}
 }
 
 export default AboutMe;
-
