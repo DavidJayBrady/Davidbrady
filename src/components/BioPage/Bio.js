@@ -27,14 +27,23 @@ class Bio extends Component {
 
 	componentDidMount() {}
 
-
-	moveRight() {
-		$('html,body').animate({scrollLeft: $('#bookPage').offset().top}, 1000);
+	moveRight(direction) {
+		if (direction === "right") {
+			$("#bio").animate({
+				marginLeft: "-=100vw",
+				duration: 1000,
+			});
+		} else {
+			$("#bio").animate({
+				marginLeft: "+=100vw",
+				duration: 1000,
+			});
+		}
 	}
 
 	render() {
 		return (
-			<div className="bioPage" style={{ height: "100%" }}>
+			<div className="bioPage" id="bioPage" style={{ height: "100%" }}>
 				<Navbar style={{ backgroundColor: "darkred", marginBottom: 0 }}>
 					<Nav
 						bsStyle="tabs"
@@ -43,34 +52,19 @@ class Bio extends Component {
 						onSelect={this.setActiveKey}
 					>
 						<NavItem eventKey={1} href="#">
-							<Link to="/bio#aboutme"> About Me </Link>
+							About Me
 						</NavItem>
 						<NavItem eventKey={2} href="#">
-							<Link to="/bio#books"> Books </Link>
+							Books
 						</NavItem>
 						<NavItem eventKey={3} href="#">
-							<Link to="/bio#french"> French </Link>
+							French
 						</NavItem>
 						<NavItem eventKey={4} href="#">
-							<Link to="/"> Back </Link>
+							Back
 						</NavItem>
 					</Nav>
 				</Navbar>
-
-				<a href="/bio#bookPage">
-					<img
-						src={RightArrow}
-						onClick={this.moveRight}
-						style={{
-							backgroundColor: "yellow",
-							width: "5%",
-							height: "5%",
-							position: "absolute",
-							top: "50%",
-							right: "0px",
-						}}
-					/>
-				</a>
 
 				<div
 					id="bio"
@@ -79,13 +73,37 @@ class Bio extends Component {
 						width: "300vw",
 						height: "100%",
 						backgroundColor: "blueViolet",
-						scroll: "smooth"
+						scroll: "smooth",
 					}}
 				>
 					<AboutMe />
 					<Books />
 					<French />
 				</div>
+
+				<img
+					src={RightArrow}
+					onClick={() => this.moveRight("left")}
+					style={{
+						width: "5%",
+						height: "5%",
+						position: "absolute",
+						top: "50%",
+						left: "0px",
+					}}
+				/>
+
+				<img
+					src={RightArrow}
+					onClick={() => this.moveRight("right")}
+					style={{
+						width: "5%",
+						height: "5%",
+						position: "absolute",
+						top: "50%",
+						right: "0px",
+					}}
+				/>
 				{/**/}
 				{/*<div style={{ height: "100%" }}>*/}
 				{/*<switch>*/}
