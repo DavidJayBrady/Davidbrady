@@ -1,24 +1,25 @@
 import React, { Component } from "react";
 import "./Bio.css";
 
-import { Navbar, Nav, NavItem } from "react-bootstrap";
-import { Route } from "react-router";
-import { Link } from "react-router-dom";
-
-import Books from "./Books";
+import Books from "./Books/Books";
 import French from "./French";
 import AboutMe from "./AboutMe";
 
 import $ from "jquery";
 
-import RightArrow from "../../Assets/Bio/right_arrow.jpg";
+import RightArrow from "../../Assets/Bio/right_arrow.png";
 
 class Bio extends Component {
 	constructor() {
 		super();
-		this.moveRight = this.moveRight.bind(this);
+		this.changeTab = this.changeTab.bind(this);
 		this.setActiveKey = this.setActiveKey.bind(this);
-		this.state = { activeKey: 1 };
+		this.state = {
+			0: "teal",
+			1: "transparent",
+			2: "transparent",
+			activeKey: 0,
+		};
 	}
 
 	setActiveKey(key) {
@@ -27,44 +28,55 @@ class Bio extends Component {
 
 	componentDidMount() {}
 
-	moveRight(direction) {
+	changeTab(direction) {
+
 		if (direction === "right") {
 			$("#bio").animate({
 				marginLeft: "-=100vw",
-				duration: 1000,
 			});
+			this.state[this.state.activeKey-1] = "transparent";
+			this.setState({ activeKey: this.state.activeKey + 1 });
 		} else {
 			$("#bio").animate({
 				marginLeft: "+=100vw",
-				duration: 1000,
 			});
+			// this.state[this.state.activeKey+1] = "transparent";
+			// this.setState({ activeKey: this.state.activeKey - 1 });
 		}
+
+		this.state[this.state.activeKey] = "teal";
+		console.log(this.state);
 	}
 
 	render() {
 		return (
 			<div className="bioPage" id="bioPage" style={{ height: "100%" }}>
-				<Navbar style={{ backgroundColor: "darkred", marginBottom: 0 }}>
-					<Nav
-						bsStyle="tabs"
-						justified
-						activeKey={this.state.activeKey}
-						onSelect={this.setActiveKey}
+				<div className="psuedoNav">
+					<div
+						className="psuedoNavItem"
+						style={{
+							backgroundColor: this.state[0],
+						}}
 					>
-						<NavItem eventKey={1} href="#">
-							About Me
-						</NavItem>
-						<NavItem eventKey={2} href="#">
-							Books
-						</NavItem>
-						<NavItem eventKey={3} href="#">
-							French
-						</NavItem>
-						<NavItem eventKey={4} href="#">
-							Back
-						</NavItem>
-					</Nav>
-				</Navbar>
+						<h4 className="navText">About Me</h4>
+					</div>
+					<div
+						className="psuedoNavItem"
+						style={{
+							backgroundColor: this.state[1],
+						}}
+					>
+						<h4>Favorite Books</h4>
+					</div>
+					<div
+						className="psuedoNavItem"
+						style={{
+							backgroundColor: this.state[2],
+						}}
+					>
+						<h4>Other</h4>
+					</div>
+				</div>
 
 				<div
 					id="bio"
@@ -72,7 +84,6 @@ class Bio extends Component {
 						display: "flex",
 						width: "300vw",
 						height: "100%",
-						backgroundColor: "blueViolet",
 						scroll: "smooth",
 					}}
 				>
@@ -83,10 +94,11 @@ class Bio extends Component {
 
 				<img
 					src={RightArrow}
-					onClick={() => this.moveRight("left")}
+					alt="LeftArrow"
+					onClick={() => this.changeTab("left")}
 					style={{
 						width: "5%",
-						height: "5%",
+						height: "10%",
 						position: "absolute",
 						top: "50%",
 						left: "0px",
@@ -95,24 +107,16 @@ class Bio extends Component {
 
 				<img
 					src={RightArrow}
-					onClick={() => this.moveRight("right")}
+					alt="RightArrow"
+					onClick={() => this.changeTab("right")}
 					style={{
 						width: "5%",
-						height: "5%",
+						height: "10%",
 						position: "absolute",
 						top: "50%",
 						right: "0px",
 					}}
 				/>
-				{/**/}
-				{/*<div style={{ height: "100%" }}>*/}
-				{/*<switch>*/}
-				{/*<Route exact path="/bio/" component={AboutMe} />*/}
-				{/*<Route exact path="/bio/books" component={Books} />*/}
-				{/*<Route exact path="/bio/french" component={French} />*/}
-				{/*<Route exact path="/bio/resume" component={Resume} />*/}
-				{/*</switch>*/}
-				{/*</div>*/}
 			</div>
 		);
 	}

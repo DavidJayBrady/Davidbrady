@@ -1,35 +1,46 @@
-.books {
+.bookRow {
     display: flex;
     height: 60vh;
 }
 
-.books > .dune > img {
+.bookRow > .dune > img {
     width: 25vw;
     height: 60vh;
 }
-.books > .mistborn > img {
+.bookRow > .mistborn > img {
     width: 25vw;
     height: 60vh;
 }
-.books > .radiance > img {
+.bookRow > .radiance > img {
     width: 25vw;
     height: 60vh;
 }
 
-.books > .mistborn {
+.bookRow > .mistborn {
     flex: 1;
     display: flex;
     justify-content: flex-end;
     padding-right: 2vw;
 }
-.books > .dune {
+.bookRow > .dune {
     flex: 1;
     display: flex;
     justify-content: center;
 }
-.books > .radiance {
+.bookRow > .radiance {
     flex: 1;
     display: flex;
     justify-content: flex-start;
     padding-left: 2vw;
+}
+
+.bookQuote {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bookQuote h3 {
+    color: lightpink;
 }

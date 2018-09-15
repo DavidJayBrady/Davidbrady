@@ -1,7 +1,12 @@
 .bioPage {
     overflow-x: hidden;
     scroll-behavior: smooth;
+    background-image: url(../../Assets/Bio/color.gif);
+    background-size: cover;
+
 }
+
+
 
 .bioTab {
     display: flex;
@@ -9,3 +14,23 @@
 }
 
 
+.psuedoNav {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    height: 10vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    background-color: rgba(30, 100, 220, .25);
+}
+
+.psuedoNavItem {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.psuedoNavItem h4 {
+    color: greenyellow;
+}
