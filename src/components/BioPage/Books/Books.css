@@ -1,41 +1,19 @@
-.bookRow {
+.bookQuoteRow {
     display: flex;
-    height: 60vh;
+    flex-direction: column;
+    width: 100%;
+    height: 80vh;
 }
 
-.bookRow > .dune > img {
-    width: 25vw;
-    height: 60vh;
-}
-.bookRow > .mistborn > img {
-    width: 25vw;
-    height: 60vh;
-}
-.bookRow > .radiance > img {
-    width: 25vw;
-    height: 60vh;
-}
-
-.bookRow > .mistborn {
-    flex: 1;
+.bookQuoteRows {
     display: flex;
-    justify-content: flex-end;
-    padding-right: 2vw;
-}
-.bookRow > .dune {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-.bookRow > .radiance {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-    padding-left: 2vw;
+    flex-direction: column;
+    width: 100vw;
+    flex-grow: 1;
 }
 
 .bookQuote {
-    height: 150px;
+    height: 25%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,3 +22,34 @@
 .bookQuote h3 {
     color: lightpink;
 }
+
+.bookRow {
+    display: flex;
+    flex-direction: row;
+    height: 75%;
+    width: 100%;
+}
+
+.bookImage {
+    width: 25vw;
+    height: 60vh;
+}
+
+.bookRow > .leftBook {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2vw;
+}
+.bookRow > .middleBook {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.bookRow > .rightBook {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 2vw;
+}
+

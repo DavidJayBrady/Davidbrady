@@ -1,25 +1,23 @@
 import React, { Component } from "react";
 
 class Book extends Component {
-
-	constructor()
-	{
+	constructor() {
 		super();
 		this.changeQuote = this.changeQuote.bind(this);
 	}
 
-	changeQuote()
-	{
+	changeQuote() {
 		this.props.controlQuote(this.props.quote);
 	}
 
 	render() {
 		return (
-			<div
-				className={this.props.cssClass}
-				onMouseEnter={this.changeQuote}
-			>
-				<img src={this.props.image} alt={this.props.altText} />
+			<div className={this.props.cssClass} onMouseEnter={this.changeQuote}>
+				<img
+					className="bookImage"
+					src={this.props.image}
+					alt={this.props.altText}
+				/>
 			</div>
 		);
 	}
