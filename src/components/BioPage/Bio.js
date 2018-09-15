@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "./Bio.css";
 
 import Books from "./Books/Books";
-import French from "./French";
-import AboutMe from "./AboutMe";
+import Other from "./Other/Other";
+import AboutMe from "./AboutMe/AboutMe";
 
 import $ from "jquery";
 
@@ -89,7 +89,7 @@ class Bio extends Component {
 				>
 					<AboutMe />
 					<Books />
-					<French />
+					<Other />
 				</div>
 
 				<img
