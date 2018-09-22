@@ -22,7 +22,7 @@ class OtherHobbies extends Component {
 	render() {
 		return (
 			<h2
-				style={{backgroundColor: this.state.backgroundColor}}
+				style={{ backgroundColor: this.state.backgroundColor }}
 				className="hobbyTopic"
 				onMouseEnter={this.backgroundColorOn}
 				onMouseLeave={this.backgroundColorOff}

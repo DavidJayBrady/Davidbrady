@@ -23,15 +23,15 @@ class Hobbies extends Component {
 							display: "flex",
 							flexGrow: 3,
 							flexDirection: "column",
-							backgroundColor: "rgba(0,0,0,.5)"
+							backgroundColor: "rgba(0,0,0,.5)",
 						}}
 					>
-							<HobbyTopic topic="Calisthenics" />
-							<HobbyTopic topic="Reading" />
-							<HobbyTopic topic="French" />
-							<HobbyTopic topic="Gaming" />
-							<HobbyTopic topic="Piano" />
-							<HobbyTopic topic="Dancing" />
+						<HobbyTopic topic="Calisthenics" />
+						<HobbyTopic topic="Reading" />
+						<HobbyTopic topic="French" />
+						<HobbyTopic topic="Gaming" />
+						<HobbyTopic topic="Piano" />
+						<HobbyTopic topic="Dancing" />
 					</div>
 					{/* right side */}
 					<div
@@ -39,28 +39,22 @@ class Hobbies extends Component {
 							display: "flex",
 							flexGrow: 5,
 							flexDirection: "column",
+							alignItems: "center"
 						}}
 					>
-						<div style={{display: "flex", width: "100%", flexGrow: 3}}>
-							<img src={MistbornImage}
-								 alt="text"
-								 style={{
-								 	height: "40%",
-									 width: "50%",
-								 }}
+						<div style={{ display: "flex", flexGrow: 3 }}>
+							<img
+								src={MistbornImage}
+								alt="text"
 							/>
 						</div>
-						<div style={{display:"flex", flexGrow: 2}}>
-							<img src={MistbornImage}
-								 alt="text"
-								 style={{
-									 height: "40%",
-									 width: "50%",
-								 }}
+						<div style={{ display: "flex", flexGrow: 2 }}>
+							<img
+								src={MistbornImage}
+								alt="text"
 							/>
 						</div>
 					</div>
-					<div />
 				</div>
 			</div>
 		);
