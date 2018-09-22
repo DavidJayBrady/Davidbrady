@@ -1,15 +1,13 @@
 .bioPage {
     overflow-x: hidden;
-    scroll-behavior: smooth;
     background-image: url(../../Assets/Bio/color.gif);
     background-size: cover;
-
 }
-
 
 .bioTab {
     display: flex;
     width: 100vw;
+    overflow-y: hidden;
 }
 
 

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "./Other.css";
+import "./Hobbies.css";
 
 class OtherHobbies extends Component {
 	constructor() {
@@ -21,16 +21,14 @@ class OtherHobbies extends Component {
 
 	render() {
 		return (
-			<div style={{backgroundColor:"rgba(0,0,0,.4"}}>
-				<div
-					className="hobbyTopic"
-					onMouseEnter={this.backgroundColorOn}
-					onMouseLeave={this.backgroundColorOff}
-					style={{ backgroundColor: this.state.backgroundColor }}
-				>
-					<h2> {this.props.topic} </h2>
-				</div>
-			</div>
+			<h2
+				style={{backgroundColor: this.state.backgroundColor}}
+				className="hobbyTopic"
+				onMouseEnter={this.backgroundColorOn}
+				onMouseLeave={this.backgroundColorOff}
+			>
+				{this.props.topic}
+			</h2>
 		);
 	}
 }

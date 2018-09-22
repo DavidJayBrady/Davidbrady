@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Bio.css";
 
 import Books from "./Books/Books";
-import Other from "./Other/Other";
+import Hobbies from "./Other/Hobbies";
 import AboutMe from "./AboutMe/AboutMe";
 
 import $ from "jquery";
@@ -14,6 +14,8 @@ class Bio extends Component {
 		super();
 		this.changeTab = this.changeTab.bind(this);
 		this.setActiveKey = this.setActiveKey.bind(this);
+		this.showOrHideLeftArrow = this.showOrHideLeftArrow.bind(this);
+		this.showOrHideRightArrow = this.showOrHideRightArrow.bind(this);
 		this.state = {
 			0: "teal",
 			1: "transparent",
@@ -30,22 +32,50 @@ class Bio extends Component {
 
 	changeTab(direction) {
 
+		console.log("begin: " + this.state.activeKey);
+
 		if (direction === "right") {
 			$("#bio").animate({
 				marginLeft: "-=100vw",
 			});
-			this.state[this.state.activeKey-1] = "transparent";
-			this.setState({ activeKey: this.state.activeKey + 1 });
+			this.state[this.state.activeKey] = "transparent";
+			this.state[this.state.activeKey+1] = "teal";
+
+			this.setState({ activeKey: this.state.activeKey + 1});
 		} else {
 			$("#bio").animate({
 				marginLeft: "+=100vw",
 			});
-			// this.state[this.state.activeKey+1] = "transparent";
-			// this.setState({ activeKey: this.state.activeKey - 1 });
+			this.state[this.state.activeKey] = "transparent";
+			this.state[this.state.activeKey-1] = "teal";
+			this.setState({ activeKey: this.state.activeKey - 1 });
 		}
 
-		this.state[this.state.activeKey] = "teal";
-		console.log(this.state);
+		console.log(this.state.activeKey);
+	}
+
+	showOrHideLeftArrow ()
+	{
+		if (this.state.activeKey === 0)
+		{
+			return "none";
+		}
+		else
+		{
+			return "inherit";
+		}
+	}
+
+	showOrHideRightArrow ()
+	{
+		if (this.state.activeKey === 2)
+		{
+			return "none";
+		}
+		else
+		{
+			return "inherit";
+		}
 	}
 
 	render() {
@@ -66,7 +96,7 @@ class Bio extends Component {
 							backgroundColor: this.state[1],
 						}}
 					>
-						<h4>Favorite Books</h4>
+						<h4>Hobbies</h4>
 					</div>
 					<div
 						className="psuedoNavItem"
@@ -74,7 +104,7 @@ class Bio extends Component {
 							backgroundColor: this.state[2],
 						}}
 					>
-						<h4>Other</h4>
+						<h4>Book Quotes</h4>
 					</div>
 				</div>
 
@@ -88,8 +118,8 @@ class Bio extends Component {
 					}}
 				>
 					<AboutMe />
+					<Hobbies />
 					<Books />
-					<Other />
 				</div>
 
 				<img
@@ -102,6 +132,7 @@ class Bio extends Component {
 						position: "absolute",
 						top: "50%",
 						left: "0px",
+						display: this.showOrHideLeftArrow()
 					}}
 				/>
 
@@ -115,6 +146,7 @@ class Bio extends Component {
 						position: "absolute",
 						top: "50%",
 						right: "0px",
+						display: this.showOrHideRightArrow()
 					}}
 				/>
 			</div>

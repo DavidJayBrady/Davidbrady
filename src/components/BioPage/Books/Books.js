@@ -36,7 +36,7 @@ class Books extends Component {
 				className="bioTab"
 				align="center"
 				style={{
-					height: "240vh",
+					height: "240vh", display: "flex", width: "100vw", overflowY: "scroll"
 				}}
 			>
 				<div className="bookQuoteRows">
