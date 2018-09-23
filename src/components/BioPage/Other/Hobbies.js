@@ -24,12 +24,8 @@ class Hobbies extends Component {
 				>
 					{/* left side */}
 					<div
-						style={{
-							display: "flex",
-							flexGrow: 3,
-							flexDirection: "column",
-							backgroundColor: "rgba(0,0,0,.5)",
-						}}
+						className="hobbyLeftSide"
+
 					>
 						<Link to="/bio/hobbies#Calisthenics">
 							<HobbyTopic topic="Calisthenics" />

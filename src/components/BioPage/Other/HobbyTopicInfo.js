@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import "./Hobbies.css";
 
-
 class HobbyTopicInfo extends Component {
 	constructor() {
 		super();
@@ -41,7 +40,9 @@ class HobbyTopicInfo extends Component {
 						textAlign: "center",
 					}}
 				>
-					<h4 style={{ color: "teal", width: "100%" }}>{this.props.text}</h4>
+					<h2 style={{ color: "lightSkyBlue", width: "100%" }}>
+						{this.props.text}
+					</h2>
 				</div>
 			</div>
 		);
