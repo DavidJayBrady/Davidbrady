@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "./Hobbies.css";
 
-class OtherHobbies extends Component {
+class HobbyTopic extends Component {
 	constructor() {
 		super();
 		this.state = { backgroundColor: "transparent" };
@@ -33,4 +33,4 @@ class OtherHobbies extends Component {
 	}
 }
 
-export default OtherHobbies;
+export default HobbyTopic;
