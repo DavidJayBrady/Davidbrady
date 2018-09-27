@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Switch, Route } from "react-router";
-import { Link } from "react-router-dom";
+import { Route, Switch } from "react-router";
+import { Link, BrowserRouter } from "react-router-dom";
 
 import HobbyTopic from "./HobbyTopic";
 import HobbyTopicInfo from "./HobbyTopicInfo";
@@ -8,7 +8,6 @@ import HobbyTopicInfo from "./HobbyTopicInfo";
 import "./Hobbies.css";
 
 import MistbornImage from "../../../Assets/Bio/Books/mistborn.jpg";
-
 
 class Hobbies extends Component {
 	render() {
@@ -23,37 +22,77 @@ class Hobbies extends Component {
 					}}
 				>
 					{/* left side */}
-					<div
-						className="hobbyLeftSide"
-
-					>
-						<Link to="/bio/hobbies#Calisthenics">
+					<div className="hobbyLeftSide">
+						<Link to="/bio/hobbies/calisthenics">
 							<HobbyTopic topic="Calisthenics" />
 						</Link>
-						<Link to="/bio/hobbies#Reading">
+						<Link to="/bio/hobbies/bjj">
+							<HobbyTopic topic="Brazilian Jiu Jitsu" />
+						</Link>
+						<Link to="/bio/hobbies/reading">
 							<HobbyTopic topic="Reading" />
 						</Link>
-						<Link to="/bio/hobbies#French">
+						<Link to="/bio/hobbies/french">
 							<HobbyTopic topic="French" />
 						</Link>
-						<Link to="/bio/hobbies#Gaming">
+						<Link to="/bio/hobbies/gaming">
 							<HobbyTopic topic="Gaming" />
 						</Link>
-						<Link to="/bio/hobbies#Piano">
-							<HobbyTopic topic="Piano" />
-						</Link>
-						<Link to="/bio/hobbies#Dancing">
+						<Link to="/bio/hobbies/dancing">
 							<HobbyTopic topic="Dancing" />
 						</Link>
 					</div>
 					{/* right side */
 					/* add Switch + Route setup here to hide/show on click */}
 
-					<HobbyTopicInfo image={MistbornImage} text="Hey text here" />
+					<Switch>
+						<Route
+							path="/bio/hobbies/calisthenics"
+							component={() => (
+								<HobbyTopicInfo image={MistbornImage} text="Calisthenics" />
+							)}
+						/>
+						<Route
+							path="/bio/hobbies/bjj"
+							component={() => (
+								<HobbyTopicInfo image={MistbornImage} text="BJJ" />
+							)}
+						/>
+						<Route
+							path="/bio/hobbies/reading"
+							component={() => (
+								<HobbyTopicInfo image={MistbornImage} text="reading" />
+							)}
+						/>
+						<Route
+							path="/bio/hobbies/french"
+							component={() => (
+								<HobbyTopicInfo image={MistbornImage} text="french" />
+							)}
+						/>
+						<Route
+							path="/bio/hobbies/gaming"
+							component={() => (
+								<HobbyTopicInfo image={MistbornImage} text="gaming" />
+							)}
+						/>
+						<Route
+							path="/bio/hobbies/dancing"
+							component={() => (
+								<HobbyTopicInfo image={MistbornImage} text="dancing" />
+							)}
+						/>
+					</Switch>
 				</div>
 			</div>
 		);
 	}
 }
+
+/*
+ component={() => (
+ <HobbyTopicInfo image={MistbornImage} text="whoooop" />
+ )}
+ */
 
 export default Hobbies;

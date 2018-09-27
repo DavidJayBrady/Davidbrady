@@ -3,8 +3,11 @@ import React, { Component } from "react";
 import "./Hobbies.css";
 
 class HobbyTopicInfo extends Component {
-	constructor() {
-		super();
+
+	constructor(props)
+	{
+		super(props);
+		console.log(props);
 	}
 
 	render() {

@@ -121,7 +121,6 @@ class Bio extends Component {
 					<Hobbies />
 					<Books />
 				</div>
-
 				<img
 					src={RightArrow}
 					alt="LeftArrow"

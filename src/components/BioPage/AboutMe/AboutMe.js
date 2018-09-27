@@ -12,8 +12,7 @@ class AboutMe extends Component {
 				"Computer Science and Engineering student. I'm interested in exploring how computer science, " +
 				"engineering, and environmental science can work together to change Earth for the better, especially " +
 				"relating to lowering CO2 levels and countering the acidification of our oceans. " +
-				"If you'd like to know more about me personally, see the other tabs on this page by clicking the arrows " +
-				"at the side of the screen.",
+				"If you'd like to know more about me personally, see the other tabs on this page.",
 		};
 	}
 
