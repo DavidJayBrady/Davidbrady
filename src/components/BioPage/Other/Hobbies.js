@@ -55,7 +55,7 @@ class Hobbies extends Component {
 						<Route
 							path="/bio/hobbies/bjj"
 							component={() => (
-								<HobbyTopicInfo image={MistbornImage} text="BJJ" />
+								<HobbyTopicInfo image={MistbornImage} text="BJJB JJB JJBJJ BJJBJJBJ JBJ JBJJBJJ BJJBJ JBJJBJ JBJ JBJJ BJJBJ JBJJBJ JBJJ BJ JBJJBJ JBJJ BJ JBJJBJ JBJ JBJJ" />
 							)}
 						/>
 						<Route

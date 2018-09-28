@@ -3,27 +3,19 @@ import React, { Component } from "react";
 import "./Hobbies.css";
 
 class HobbyTopicInfo extends Component {
-
-	constructor(props)
-	{
+	constructor(props) {
 		super(props);
 		console.log(props);
 	}
 
 	render() {
 		return (
-			<div
-				style={{
-					display: "flex",
-					flexGrow: 5,
-					flexDirection: "column",
-					alignItems: "center",
-				}}
-			>
+			<div className="hobbyRightSide">
 				<div
 					style={{
 						display: "flex",
-						height: "60%",
+						//height: "60%",
+						flexGrow: 3,
 						width: "100%",
 						justifyContent: "center",
 					}}
@@ -31,22 +23,27 @@ class HobbyTopicInfo extends Component {
 					<img
 						src={this.props.image}
 						alt="HobbyInfoImage"
-						style={{ height: "80%", padding: "10%" }}
+						style={{
+							paddingTop: "5%",
+							paddingLeft: "10%",
+							paddingRight: "10%",
+							width: "100%",
+						}}
 					/>
 				</div>
-				<div
+				<h2
 					style={{
+						color: "lightSkyBlue",
 						display: "flex",
+						flexGrow: 2,
+						flexWrap: "nowrap",
 						height: "40%",
-						width: "100%",
-						alignItems: "center",
 						textAlign: "center",
+						width: "80%",
 					}}
 				>
-					<h2 style={{ color: "lightSkyBlue", width: "100%" }}>
-						{this.props.text}
-					</h2>
-				</div>
+					{this.props.text}
+				</h2>
 			</div>
 		);
 	}
