@@ -22,7 +22,7 @@ class HobbyTopic extends Component {
 	render() {
 		return (
 			<h2
-				style={{ backgroundColor: this.state.backgroundColor }}
+				style={{ backgroundColor: this.state.backgroundColor, paddingLeft: "10%" }}
 				className="hobbyTopic"
 				onMouseEnter={this.backgroundColorOn}
 				onMouseLeave={this.backgroundColorOff}

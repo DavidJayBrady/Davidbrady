@@ -8,6 +8,8 @@ import HobbyTopicInfo from "./HobbyTopicInfo";
 import "./Hobbies.css";
 
 import MistbornImage from "../../../Assets/Bio/Books/mistborn.jpg";
+import Reading from "../../../Assets/Hobbies/books.jpeg";
+import French from "../../../Assets/Hobbies/french.jpg";
 
 class Hobbies extends Component {
 	render() {
@@ -61,13 +63,13 @@ class Hobbies extends Component {
 						<Route
 							path="/bio/hobbies/reading"
 							component={() => (
-								<HobbyTopicInfo image={MistbornImage} text="reading" />
+								<HobbyTopicInfo image={Reading} text="Fantasy worlds are awesome. I mostly like books based on how cool the world is. Top 3 books are Mistborn, Words of Radiance, and Dune." />
 							)}
 						/>
 						<Route
 							path="/bio/hobbies/french"
 							component={() => (
-								<HobbyTopicInfo image={MistbornImage} text="french" />
+								<HobbyTopicInfo image={French} text="Studied for ~8 months. Picked it up impulsively but took it more seriously once I found people to practice with!" />
 							)}
 						/>
 						<Route

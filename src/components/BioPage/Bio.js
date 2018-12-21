@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Bio.css";
 
 import Books from "./Books/Books";
-import Hobbies from "./Other/Hobbies";
+import Hobbies from "./Hobbies/Hobbies";
 import AboutMe from "./AboutMe/AboutMe";
 
 import $ from "jquery";

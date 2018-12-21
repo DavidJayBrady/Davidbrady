@@ -27,23 +27,26 @@ class HobbyTopicInfo extends Component {
 							paddingTop: "5%",
 							paddingLeft: "10%",
 							paddingRight: "10%",
-							width: "100%",
+							width: "80%",
+							height: "80%",
+							maxHeight: "350px",
+							maxWidth: "500px"
 						}}
 					/>
 				</div>
-				<h2
+				<h3
 					style={{
 						color: "lightSkyBlue",
 						display: "flex",
 						flexGrow: 2,
 						flexWrap: "nowrap",
 						height: "40%",
-						textAlign: "center",
-						width: "80%",
+						width: "60%",
+						justifyContent: "center",
 					}}
 				>
 					{this.props.text}
-				</h2>
+				</h3>
 			</div>
 		);
 	}
