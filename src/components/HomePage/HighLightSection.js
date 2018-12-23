@@ -7,8 +7,8 @@ class HighlightSection extends Component {
 	constructor(props) {
 		super(props);
 
-		this.weakBackgroundOpacity = ".15";
-		this.strongBackgroundOpacity = ".25";
+		this.weakBackgroundOpacity = "0";
+		this.strongBackgroundOpacity = ".15";
 
 		this.weakEnergyOpacity = ".50";
 		this.strongEnergyOpacity = "1";
@@ -75,9 +75,6 @@ class HighlightSection extends Component {
 						style={{
 							width: "20%",
 							height: "20%",
-							// position: "absolute",
-							// top: "30%",
-							// left: "40%",
 							opacity: this.state.energyOpacity,
 							animation: "EnergySpin infinite 20s linear",
 							animationPlayState: this.state.hover ? "running" : "paused",

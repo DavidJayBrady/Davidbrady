@@ -3,8 +3,9 @@ html, body, #root {
 }
 
 .App {
-    background-image: url(Assets/Castle.jpeg);
+    background-image: url(Assets/orangeCircle.png);
     background-size: cover;
+
 }
 
 

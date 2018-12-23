@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./HighLightScreen.css";
 
 import HighLightSection from "../HomePage/HighLightSection";
 import BlueEnergy from "../../Assets/MainPage/blue_energy.png";
@@ -29,14 +30,10 @@ class HighLightScreen extends Component {
 				}}
 			>
 				<div
-					style={{
-						display: "flex",
-						flexDirection: "row",
-						flex: 1,
-						width: "100%",
-					}}
+					className="bigRow"
 				>
 					<HighLightSection
+						className="bigRow"
 						colorEtre={this.state.color}
 						linkTo="/yoshi"
 						text="Yoshi"
@@ -44,39 +41,36 @@ class HighLightScreen extends Component {
 						color="blue"
 						energyBall={BlueEnergy}
 					/>
-					<HighLightSection
-						colorEtre={this.state.color}
-						linkTo="/"
-						text="Constructing"
-						controlColor={this.setColor}
-						color="green"
-						energyBall={GreenEnergy}
-					/>
+
+
+
+"
+
+
+
+
+
 				</div>
+
 				<div
-					style={{
-						display: "flex",
-						flexDirection: "row",
-						flex: 1,
-						widht: "100%",
-					}}
+					className="littleRow">
+					<h1 className="welcomeText">
+						Welcome to David's Site
+					</h1>
+				</div>
+
+				<div
+					className="bigRow"
 				>
 					<HighLightSection
 						colorEtre={this.state.color}
 						linkTo="/bio"
 						text="Bio"
 						controlColor={this.setColor}
-						color="yellow"
-						energyBall={YellowEnergy}
+						color="pink"
+						energyBall={GreenEnergy}
 					/>
-					<HighLightSection
-						colorEtre={this.state.color}
-						linkTo="/"
-						text="Constructing"
-						controlColor={this.setColor}
-						color="red"
-						energyBall={RedEnergy}
-					/>
+
 				</div>
 			</div>
 		);

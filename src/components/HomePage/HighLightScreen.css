@@ -1,0 +1,23 @@
+.bigRow {
+    display: flex;
+    flex-direction: row;
+    flex: 2;
+    width: 100%;
+}
+
+.littleRow {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    width: 100%;
+}
+
+.welcomeText {
+    width: 100%;
+    margin-right: 25%;
+    color: orange;
+    text-align: center;
+    align-items: center;
+    font-style: italic;
+    font-size: 400%;
+}
