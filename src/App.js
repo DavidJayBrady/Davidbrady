@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { Route } from 'react-router';
 
 import MainPage from './components/MainPage';
@@ -23,13 +23,13 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <div style={{height: '100%'}}>
           <Route exact path="/" component={MainPage} />
           <Route exact path="/yoshi" component={Yoshi} />
           <Route path="/bio/" component={Bio} />
         </div>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }

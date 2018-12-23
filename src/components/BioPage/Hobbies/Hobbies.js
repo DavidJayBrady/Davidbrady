@@ -40,10 +40,11 @@ class Hobbies extends Component {
 						<Link to="/bio/hobbies/gaming">
 							<HobbyTopic topic="Gaming" />
 						</Link>
-						<Link to="/bio/hobbies/dancing">
-							<HobbyTopic topic="Dancing" />
+						<Link to="/bio/hobbies/gamedev">
+							<HobbyTopic topic="GameDev" />
 						</Link>
 					</div>
+
 					{/* right side */
 					/* add Switch + Route setup here to hide/show on click */}
 
@@ -69,19 +70,19 @@ class Hobbies extends Component {
 						<Route
 							path="/bio/hobbies/french"
 							component={() => (
-								<HobbyTopicInfo image={French} text="Studied for ~8 months. Picked it up impulsively but took it more seriously once I found people to practice with!" />
+								<HobbyTopicInfo image={French} text="J'étudie le français depuis Janvier 2018 et ça continue. J'ai pris un cours, et je suis allé en France l'été dernier" />
 							)}
 						/>
 						<Route
 							path="/bio/hobbies/gaming"
 							component={() => (
-								<HobbyTopicInfo image={MistbornImage} text="gaming" />
+								<HobbyTopicInfo image={MistbornImage} text="gamez" />
 							)}
 						/>
 						<Route
-							path="/bio/hobbies/dancing"
+							path="/bio/hobbies/gamedev"
 							component={() => (
-								<HobbyTopicInfo image={MistbornImage} text="dancing" />
+								<HobbyTopicInfo image={MistbornImage} text="gamedev" />
 							)}
 						/>
 					</Switch>

@@ -7,12 +7,10 @@ class AboutMe extends Component {
 	constructor() {
 		super();
 		this.state = {
-			bioMessage:
-				"Hello, welcome to my website! I'm David Brady. I currently attend UC Irvine as a 4th year " +
-				"Computer Science and Engineering student. I'm interested in exploring how computer science, " +
-				"engineering, and environmental science can work together to change Earth for the better, especially " +
-				"relating to lowering CO2 levels and countering the acidification of our oceans. " +
-				"If you'd like to know more about me personally, see the other tabs on this page.",
+			bioMessage: "Hello, welcome to my website! I'm David Brady. I currently attend UC Irvine as a 4th year " +
+			"Computer Science and Engineering student. I'm interested in exploring how computer science, engineering, and math" +
+			"can make change for the better. Some fields I'm interested in include Environmental Science and Machine Learning." +
+			"If you'd like to know more about me personally, see the other tabs on this page."
 		};
 	}
 
