@@ -8,6 +8,7 @@
     "react": "^16.4.0",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.0",
+    "react-icons": "^3.2.2",
     "react-scripts": "1.1.4",
     "react-scroll-horizontal": "^1.5.1"
   },

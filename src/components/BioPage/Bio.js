@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import RightArrow from "../../Assets/Bio/right_arrow.png";
+
 import "./Bio.css";
 
 import Books from "./Books/Books";
@@ -6,8 +8,6 @@ import Hobbies from "./Hobbies/Hobbies";
 import AboutMe from "./AboutMe/AboutMe";
 
 import $ from "jquery";
-
-import RightArrow from "../../Assets/Bio/right_arrow.png";
 
 class Bio extends Component {
 	constructor() {
@@ -121,6 +121,7 @@ class Bio extends Component {
 					<Hobbies />
 					<Books />
 				</div>
+
 				<img
 					src={RightArrow}
 					alt="LeftArrow"
@@ -131,7 +132,11 @@ class Bio extends Component {
 						position: "absolute",
 						top: "50%",
 						left: "0px",
-						display: this.showOrHideLeftArrow()
+						display: this.showOrHideLeftArrow(),
+						mozTransform: "scale(-1, -1)",
+						oTransform: "scale(-1, -1)",
+						webkitTransform: "scale(-1, -1)",
+						transform: "scale(-1, -1)"
 					}}
 				/>
 

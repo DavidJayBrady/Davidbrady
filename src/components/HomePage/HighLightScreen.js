@@ -38,8 +38,8 @@ class HighLightScreen extends Component {
 				>
 					<HighLightSection
 						colorEtre={this.state.color}
-						linkTo="/yoshi"
-						text="Yoshi"
+						linkTo="/"
+						text="Constructing"
 						controlColor={this.setColor}
 						color="blue"
 						energyBall={BlueEnergy}
